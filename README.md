@@ -1,6 +1,6 @@
 # Life-Hack-CSP
 Chrome extension masking location
-'''
+``` 
 project/
 ├── src/
 │   ├── types.ts           (TypeScript interfaces)
@@ -17,7 +17,8 @@ project/
 ├── esbuild.config.js
 ├── tsconfig.json
 └── package.json
-'''
+```
+
 bash
 # Install dependencies
 npm install --save-dev esbuild typescript
