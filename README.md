@@ -19,7 +19,7 @@ project/
 └── package.json
 ```
 
-bash
+## bash
 # Install dependencies
 npm install --save-dev esbuild typescript
 
