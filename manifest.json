@@ -1,0 +1,51 @@
+{
+    "manifest_version": 3,
+    "name": "Country Spoofer Pro",
+    "version": "1.0.0",
+    "description": "Professional browser fingerprint spoofing extension for country simulation",
+    "permissions": [
+      "declarativeNetRequest",
+      "storage",
+      "tabs",
+      "scripting",
+      "webRequest",
+      "cookies",
+      "browsingData"
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "background": {
+      "service_worker": "./public/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["./public/content.js"],
+        "run_at": "document_start",
+        "all_frames": true
+      }
+    ],
+    "action": {
+      "default_popup": "./public/popup.html",
+      "default_title": "Country Spoofer Pro"
+    },
+    "icons": {
+    },
+    "declarative_net_request": {
+      "rule_resources": [
+        {
+          "id": "user_agent_rules",
+          "enabled": true,
+          "path": "./src/rules.json"
+        }
+      ]
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["./public/inject.js"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
